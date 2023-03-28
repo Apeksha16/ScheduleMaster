@@ -91,7 +91,6 @@ const styles = StyleSheet.create({
     height: 30,
     width: 200,
     alignSelf: 'center',
-
   },
   phoneNumber: {
     margin: 30,
