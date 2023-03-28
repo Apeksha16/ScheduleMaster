@@ -1,15 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 
+
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Schedule Master</Text>
 
-      <Image style={styles.picture1} source={require('./assets/photos/login-01.jpg')} />
+      <View style={styles.upperContainer}>
+        <Text style={styles.header}>Schedule Master</Text>
 
+        <Image style={styles.picture1} source={require('./assets/photos/login.png')} />
+      </View>
       <TextInput style={styles.phoneNumber} placeholder='Enter Phone Number'></TextInput>
       <View style={styles.lowerContainer}>
+
         <TouchableOpacity style={styles.signUp} >
           <Text>Sign Up</Text>
         </TouchableOpacity>
@@ -18,7 +22,7 @@ export default function App() {
         </TouchableOpacity>
       </View>
       <StatusBar style="auto" />
-    </View>
+    </View >
   );
 }
 
@@ -27,11 +31,33 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
+  upperContainer: {
+    backgroundColor: '#f2f2f2',
+    marginTop: "25%",
+    width: 350,
+    borderRadius: 22,
+    alignItems: 'center',
     justifyContent: 'center',
+    height: 360,
+
+  },
+  lowerContainer: {
+
+    flexDirection: 'column',
+    backgroundColor: '#f2f2f2',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 18,
+    width: 300,
+    height: 200,
+
+
   },
   header: {
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 30,
     alignItems: 'center',
   },
   picture1: {
@@ -39,23 +65,14 @@ const styles = StyleSheet.create({
     width: 280,
 
   },
-  lowerContainer: {
 
-    flexDirection: 'column',
-    marginTop: 30,
-    backgroundColor: '#f2f2f2',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 6,
-    padding: 20,
-
-  },
 
   signUp: {
     borderWidth: 1,
     backgroundColor: '#9b4afe',
-    borderRadius: 2,
-    height: 20,
+    borderColor: '#9b4afe',
+    borderRadius: 6,
+    height: 30,
     width: 200,
     alignItems: 'center',
     justifyContent: 'center',
@@ -67,20 +84,22 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginTop: 20,
     backgroundColor: 'white',
-    borderRadius: 2,
+    borderRadius: 6,
+    borderColor: '#9b4afe',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 20,
+    height: 30,
     width: 200,
     alignSelf: 'center',
 
   },
   phoneNumber: {
-    marginTop: 20,
+    margin: 30,
     fontWeight: 'bold',
     borderRadius: 6,
     borderColor: 'grey',
     borderWidth: 2,
-    padding: 8,
+    padding: 10,
+    fontSize: 22,
   },
 });
