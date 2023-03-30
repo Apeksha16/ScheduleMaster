@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, ScrollView, SafeAreaView } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export default function Otp() {
+export default function Otp({navigation}) {
     return (
             <KeyboardAvoidingView style={{ flex: 1 }} enabled behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -23,7 +23,7 @@ export default function Otp() {
                     <TextInput style={styles.code}></TextInput>
                     <TextInput style={styles.code}></TextInput>
                 </View>
-                <TouchableOpacity style={styles.verify}  >
+                <TouchableOpacity style={styles.verify} onPress={()=>navigation.navigate('Home')} >
                     <Text style={styles.text1}>Verify</Text>
                 </TouchableOpacity >
             </View>
