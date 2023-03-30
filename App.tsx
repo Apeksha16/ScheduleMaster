@@ -30,6 +30,7 @@ export default function App() {
 
       </View>
       <StatusBar style="auto" />
+
       <Image style={styles.picture1} source={require('./assets/photos/footer.png')} />
     </View>
 
