@@ -2,41 +2,44 @@ import * as React from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, ScrollView, SafeAreaView } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export default function Otp({navigation}) {
+export default function Otp({ navigation }) {
     return (
-            <KeyboardAvoidingView style={{ flex: 1 }} enabled behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-<View style={styles.container}>
-<View style={styles.upperContainer}>
-                <Text style={styles.header}>Schedule Master</Text>
-                <Image style={styles.picture1} source={require('.././assets/photos/otp.png')} />
-            </View>
-            <View style={styles.backgroundColor}>
-                <View style={styles.phoneContainer}>
-                    <Text style={styles.phoneNumber}>+91 7668804527</Text>
-                    <Ionicons style={styles.pencil} name="pencil-outline" size={30} color="black" />
-                </View>
-                <Text style={styles.otp}>Enter 4-digit OTP</Text>
-                <View style={styles.lowerContainer}>
-                    <TextInput style={styles.code}></TextInput>
-                    <TextInput style={styles.code}></TextInput>
-                    <TextInput style={styles.code}></TextInput>
-                    <TextInput style={styles.code}></TextInput>
-                </View>
-                <TouchableOpacity style={styles.verify} onPress={()=>navigation.navigate('Home')} >
-                    <Text style={styles.text1}>Verify</Text>
-                </TouchableOpacity >
-            </View>
-        </View >
+        <KeyboardAvoidingView style={{ flex: 1 }} enabled behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                <View style={styles.container}>
+                    <View style={styles.upperContainer}>
+                        <Text style={styles.header}>Schedule Master</Text>
+                        <Image style={styles.picture1} source={require('.././assets/photos/otp.png')} />
+                    </View>
+                    <View style={styles.backgroundColor}>
+                        <View style={styles.phoneContainer}>
+                            <Text style={styles.phoneNumber}>+91 7668804527</Text>
+                            <TouchableOpacity>
+                                <Ionicons style={styles.pencil} name="pencil-outline" size={30} color="black" />
+                            </TouchableOpacity>
+                        </View>
+                        <Text style={styles.otp}>Enter 4-digit OTP</Text>
+                        <View style={styles.lowerContainer}>
+                            <TextInput style={styles.code}></TextInput>
+                            <TextInput style={styles.code}></TextInput>
+                            <TextInput style={styles.code}></TextInput>
+                            <TextInput style={styles.code}></TextInput>
+                        </View>
+                        <TouchableOpacity style={styles.verify} onPress={() => navigation.navigate('Home')} >
+                            <Text style={styles.text1}>Verify</Text>
+                        </TouchableOpacity >
+                    </View>
+                </View >
             </TouchableWithoutFeedback></KeyboardAvoidingView>
-    );}
+    );
+}
 
-    const styles = StyleSheet.create({
-      container: {
+const styles = StyleSheet.create({
+    container: {
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'flex-end',
+
     },
     phoneContainer: {
         justifyContent: 'center',
@@ -47,15 +50,28 @@ export default function Otp({navigation}) {
         width: '100%',
     },
     pencil: {
+        textAlign: 'center',
         marginLeft: 10,
+        fontWeight: 'bold',
+        borderRadius: 6,
+        borderColor: 'grey',
+        backgroundColor: 'white',
+        borderWidth: 2,
+        paddingLeft: 12,
+        paddingTop: 12,
+        fontSize: 18,
+        width: 44,
+        padding: 10,
+
     },
 
     picture1: {
-        height: 210,
+        height: 280,
         width: 280,
     },
     upperContainer: {
         alignItems: 'center',
+        marginTop: 140,
 
     },
     header: {
@@ -77,25 +93,26 @@ export default function Otp({navigation}) {
     otp: {
         fontWeight: 'bold',
         fontSize: 22,
+        marginTop: 10,
     },
     lowerContainer: {
-
+        marginTop: 10,
         flexDirection: 'row',
         alignItems: 'center',
         borderRadius: 18,
+        justifyContent: 'flex-end',
     },
     verify: {
         borderWidth: 1,
         backgroundColor: '#9b4afe',
         borderColor: '#9b4afe',
         borderRadius: 6,
-        height: 40,
-        width: 200,
+        height: 50,
+        width: 240,
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
-        marginBottom: 30,
-        marginTop: 20,
+        marginTop: 10,
 
     },
     code: {
@@ -113,9 +130,9 @@ export default function Otp({navigation}) {
     backgroundColor: {
         marginTop: '6%',
         backgroundColor: '#f2f2f2',
-        borderRadius: 38,
+        borderRadius: 48,
         width: '100%',
-        height: '44%',
+        height: '50%',
         alignItems: 'center',
         justifyContent: 'flex-start',
         paddingTop: '14%',
@@ -125,4 +142,4 @@ export default function Otp({navigation}) {
         fontSize: 22,
         color: 'white',
     },
-    });
+});
