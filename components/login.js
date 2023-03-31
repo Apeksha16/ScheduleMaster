@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, ScrollView, SafeAreaView } from 'react-native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
   return (
     <KeyboardAvoidingView style={{ flex: 1 }} enabled behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -16,7 +18,7 @@ const Login = ({navigation}) => {
               <Text style={styles.btnTxt}>Sign Up</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.Login} onPress={() => navigation.navigate('Verify OTP')}>
-              <Text>Login</Text>
+              <Text style={styles.btnTxt1}>Login</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -50,7 +52,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 18,
-    width: 300,
+    width: 340,
     height: 200,
   },
   header: {
@@ -63,17 +65,23 @@ const styles = StyleSheet.create({
     width: 280,
 
   },
-  btnTxt:{
-    color:'white'
+  btnTxt: {
+    color: 'white',
+    fontSize: 16,
   },
+  btnTxt1: {
+    color: 'black',
+    fontSize: 16,
+  },
+
 
   signUp: {
     borderWidth: 1,
     backgroundColor: '#9b4afe',
     borderColor: '#9b4afe',
     borderRadius: 6,
-    height: 40,
-    width: 200,
+    height: 50,
+    width: 240,
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
@@ -87,11 +95,12 @@ const styles = StyleSheet.create({
     borderColor: '#9b4afe',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 40,
-    width: 200,
+    height: 50,
+    width: 240,
     alignSelf: 'center',
   },
   phoneNumber: {
+    textAlign: 'center',
     margin: 30,
     fontWeight: 'bold',
     borderRadius: 6,
@@ -99,6 +108,6 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     padding: 10,
     fontSize: 22,
-    width:238,
+    width: 238,
   },
 });
