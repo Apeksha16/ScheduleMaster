@@ -5,6 +5,7 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 
 const Login = ({ navigation }) => {
   return (
+    <SafeAreaView style={{ flex: 1, backgroundColor:'#fff' }}>
     <KeyboardAvoidingView style={{ flex: 1 }} enabled behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={styles.container}>
@@ -23,7 +24,8 @@ const Login = ({ navigation }) => {
           </View>
         </View>
       </TouchableWithoutFeedback>
-    </ KeyboardAvoidingView>
+      </ KeyboardAvoidingView>
+      </SafeAreaView>
   );
 };
 
@@ -54,6 +56,7 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     width: 340,
     height: 200,
+    marginBottom:'6%'
   },
   header: {
     fontWeight: 'bold',

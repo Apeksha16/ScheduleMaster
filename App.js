@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, SafeAreaView } from 'react-native';
+import { View,StyleSheet, SafeAreaView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './components/login';
@@ -12,19 +12,19 @@ const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
       <StatusBar style="auto" />
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }} >
-
-          {/* initialRouteName='Login' */}
-          {/* <Stack.Screen name="Login" component={Login} />
+        <Stack.Navigator screenOptions={{ headerShown: false }}
+          initialRouteName='Login'>
+          <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Verify OTP" component={Otp} />
-          <Stack.Screen name="Home" component={Home} /> */}
+          <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Courses" component={CourseList} />
         </Stack.Navigator>
       </NavigationContainer>
-    </SafeAreaView>
+   </View>
+      
   );
 };
 

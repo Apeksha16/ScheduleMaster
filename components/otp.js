@@ -1,14 +1,23 @@
 import * as React from 'react';
+import { Dimensions } from 'react-native';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, ScrollView, SafeAreaView } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+var screen = {
+    width: Dimensions.get('window').width,
+    height:Dimensions.get('window').height
+}
 export default function Otp({ navigation }) {
+
+
     return (
-        <KeyboardAvoidingView style={{ flex: 1 }} enabled behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={{ flex: 1}}>
+        <SafeAreaView style={{ flex: 1, backgroundColor:'#fff' }}>
+        <KeyboardAvoidingView style={{ flex: 1 }} enabled keyboardVerticalOffset={Platform.OS === 'ios' ? 64 : 0} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+                <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View style={styles.container}>
                     <View style={styles.upperContainer}>
-                        <Text style={styles.header}>Schedule Master</Text>
+                        {/* <Text style={styles.header}>Login</Text> */}
                         <Image style={styles.picture1} source={require('.././assets/photos/otp.png')} />
                     </View>
                     <View style={styles.backgroundColor}>
@@ -30,23 +39,30 @@ export default function Otp({ navigation }) {
                         </TouchableOpacity >
                     </View>
                 </View >
-            </TouchableWithoutFeedback></KeyboardAvoidingView>
+                </TouchableWithoutFeedback>
+            </KeyboardAvoidingView>
+            </SafeAreaView>
+            <View style={styles.bottomView} />
+            </View>
     );
 }
 
 const styles = StyleSheet.create({
+    bottomView: {
+        flex:0.05,
+        backgroundColor:'#f2f2f2'
+    },
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        // backgroundColor: 'white',
         alignItems: 'center',
-
+        justifyContent:'flex-end'
     },
     phoneContainer: {
         justifyContent: 'center',
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 20,
-
         width: '100%',
     },
     pencil: {
@@ -57,21 +73,20 @@ const styles = StyleSheet.create({
         borderColor: 'grey',
         backgroundColor: 'white',
         borderWidth: 2,
-        paddingLeft: 12,
-        paddingTop: 12,
-        fontSize: 18,
+        fontSize: 24,
         width: 44,
-        padding: 10,
-
+        padding: 8,
+        backgroundColor:'#f2f2f2'
     },
 
     picture1: {
-        height: 280,
         width: 280,
+        height:280,
+        // resizeMode:'center',
     },
     upperContainer: {
         alignItems: 'center',
-        marginTop: 140,
+        // marginTop: 140,
 
     },
     header: {
@@ -89,6 +104,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         width: 178,
         color: '#5A5A5A',
+        backgroundColor: '#f2f2f2',
     },
     otp: {
         fontWeight: 'bold',
@@ -119,7 +135,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         width: 40,
         height: 40,
-        paddingLeft: 14,
+        paddingLeft: 10,
         margin: 20,
         borderRadius: 6,
         borderWidth: 2,
@@ -130,16 +146,17 @@ const styles = StyleSheet.create({
     backgroundColor: {
         marginTop: '6%',
         backgroundColor: '#f2f2f2',
-        borderRadius: 48,
+        // borderRadius: 48,
+        borderTopLeftRadius: 48,
+        borderTopRightRadius:48,
         width: '100%',
         height: '50%',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        paddingTop: '14%',
-
+        paddingTop: '10%',
     },
     text1: {
-        fontSize: 22,
+        fontSize: 16,
         color: 'white',
     },
 });
