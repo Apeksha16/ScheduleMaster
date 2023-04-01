@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Dimensions } from 'react-native';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, ScrollView, SafeAreaView } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-
+import { SvgXml } from "react-native-svg";
+const editIconColor = '#9b4afe';
+const editIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48" fill="${editIconColor}"><path d="M180 876h44l443-443-44-44-443 443v44Zm614-486L666 262l42-42q17-17 42-17t42 17l44 44q17 17 17 42t-17 42l-42 42Zm-42 42L248 936H120V808l504-504 128 128Zm-107-21-22-22 44 44-22-22Z"/></svg>`
 const OSTypePadding = Platform.OS == 'ios' ? '3%' : '4%';
 export default function Otp({ navigation }) {
-
 
     return (
         <View style={{ flex: 1 }}>
@@ -21,7 +21,7 @@ export default function Otp({ navigation }) {
                                 <View style={styles.phoneContainer}>
                                     <Text style={styles.phoneNumber}>+91 7668804527</Text>
                                     <TouchableOpacity>
-                                        <Ionicons style={styles.pencil} name="pencil-outline" size={30} color="black" />
+                                        <SvgXml style={styles.pencil} xml={editIcon} height={30} width={30} />
                                     </TouchableOpacity>
                                 </View>
                                 <Text style={styles.otp}>Enter 4-digit OTP</Text>
