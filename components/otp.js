@@ -3,10 +3,7 @@ import { Dimensions } from 'react-native';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, ScrollView, SafeAreaView } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-var screen = {
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height
-}
+const OSTypePadding = Platform.OS == 'ios' ? '3%' : '4%';
 export default function Otp({ navigation }) {
 
 
@@ -137,7 +134,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         width: 40,
         height: 40,
-        paddingLeft: '3%',
+        paddingLeft: OSTypePadding,
         margin: 20,
         borderRadius: 6,
         borderWidth: 2,
