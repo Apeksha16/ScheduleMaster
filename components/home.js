@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity,SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, SafeAreaView } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { SvgXml } from "react-native-svg";
 const backArrowColor = "#fff";
@@ -7,58 +7,61 @@ const userCode = `<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0
 const forwardArrowCode = `<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48" fill="${backArrowColor}"><path d="M264 957q-16-17-16.5-40t16.5-40l303-303-303-303q-16-16-17-39.5t16-40.5q16-17 40-17.5t40 16.5l352 351q7 7 10.5 15.5T709 574q0 9-3.5 17.5T695 607L344 958q-16 16-39.5 16T264 957Z"/></svg>`;
 
 
+
+
+
 const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <SafeAreaView style={{ flex: 1, backgroundColor: '#9b4afe' }}>
+      <SafeAreaView style={styles.droidSafeArea}>
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
 
-        <View style={styles.pageHeader}>
-          <View style={{flex:1, flexDirection:'row'}}>
-            <TouchableOpacity style={styles.backNavigate}>
-              <SvgXml xml={backArrowCode} width={26} height={26} style={{marginRight:'4%'}}></SvgXml>
-        <Text style={styles.title}>Dashboard</Text>
-        </TouchableOpacity>
-          </View>
-          <TouchableOpacity style={{marginRight:'4%'}}>
-            <View style={styles.userIcon}>
-            <SvgXml xml={userCode} width={26} height={26} style={{margin:2}}></SvgXml>    
+          <View style={styles.pageHeader}>
+            <View style={{ flex: 1, flexDirection: 'row' }}>
+              <TouchableOpacity style={styles.backNavigate}>
+                <SvgXml xml={backArrowCode} width={26} height={26} style={{ marginRight: '4%' }}></SvgXml>
+                <Text style={styles.title}>Dashboard</Text>
+              </TouchableOpacity>
             </View>
-        </TouchableOpacity>
-      </View>
-        <View style={{alignItems:'flex-end',margin:'1%'}}>
-        <Text style={styles.userName}>Hello, Apeksha Verma</Text>
-      </View>
-      <View style={styles.upperContainer}>
-        <Image style={styles.picture2} source={require('.././assets/photos/background.png')} />
-      </View>
+            <TouchableOpacity style={{ marginRight: '4%' }}>
+              <View style={styles.userIcon}>
+                <SvgXml xml={userCode} width={26} height={26} style={{ margin: 2 }}></SvgXml>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View style={{ alignItems: 'flex-end', margin: '1%' }}>
+            <Text style={styles.userName}>Hello, Apeksha Verma</Text>
+          </View>
+          <View style={styles.upperContainer}>
+            <Image style={styles.picture2} source={require('.././assets/photos/background.png')} />
+          </View>
 
-        <ScrollView contentContainerStyle={styles.lowerContainer} style={{ height: '100%' }}>
-        <TouchableOpacity style={styles.courses} onPress={() => navigation.navigate('Courses')} >
-          <Text style={styles.text1}>Courses</Text>
-            {/* <Ionicons name="chevron-forward-outline" size={30} color="white" /> */}
-            <SvgXml xml={forwardArrowCode} width={20} height={20} style={{ marginTop: '1.5%' }}></SvgXml>
-        </TouchableOpacity>
+          <ScrollView contentContainerStyle={styles.lowerContainer} style={{ height: '100%' }}>
+            <TouchableOpacity style={styles.courses} onPress={() => navigation.navigate('Courses')} >
+              <Text style={styles.text1}>Courses</Text>
+              {/* <Ionicons name="chevron-forward-outline" size={30} color="white" /> */}
+              <SvgXml xml={forwardArrowCode} width={20} height={20} style={{ marginTop: '1.5%' }}></SvgXml>
+            </TouchableOpacity>
 
-        <TouchableOpacity style={styles.courses} >
-          <Text style={styles.text1}> Faculties</Text>
-            {/* <Ionicons name="chevron-forward-outline" size={30} color="white" /> */}
-            <SvgXml xml={forwardArrowCode} width={20} height={20} style={{ marginTop: '1.5%' }}></SvgXml>
-            
-        </TouchableOpacity>
+            <TouchableOpacity style={styles.courses} >
+              <Text style={styles.text1}> Faculties</Text>
+              {/* <Ionicons name="chevron-forward-outline" size={30} color="white" /> */}
+              <SvgXml xml={forwardArrowCode} width={20} height={20} style={{ marginTop: '1.5%' }}></SvgXml>
 
-        <TouchableOpacity style={styles.courses} >
-          <Text style={styles.text1}>Schedules</Text>
-            {/* <Ionicons name="chevron-forward-outline" size={30} color="white" /> */}
-            <SvgXml xml={forwardArrowCode} width={20} height={20} style={{ marginTop: '1.5%' }}></SvgXml>
-            
-          </TouchableOpacity>
-          
-        </ScrollView>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.courses} >
+              <Text style={styles.text1}>Schedules</Text>
+              {/* <Ionicons name="chevron-forward-outline" size={30} color="white" /> */}
+              <SvgXml xml={forwardArrowCode} width={20} height={20} style={{ marginTop: '1.5%' }}></SvgXml>
+
+            </TouchableOpacity>
+
+          </ScrollView>
         </View>
       </SafeAreaView>
       <View style={styles.bottomView} />
-      </View>
+    </View>
   );
 };
 
@@ -70,21 +73,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 60,
     width: '100%',
-    backgroundColor:'#9b4afe'
+    backgroundColor: '#9b4afe'
   },
   bottomView: {
-    flex:0.05,
-    backgroundColor:'red'
-},
+    flex: 0.05,
+    backgroundColor: 'red'
+  },
   title: {
     fontWeight: 'bold',
     fontSize: 18,
     color: '#fff',
-    marginTop:'1.2%'
+    marginTop: '1.2%'
   },
   backNavigate: {
     paddingLeft: '4%',
-    flexDirection:'row'
+    flexDirection: 'row'
   },
   container: {
     flex: 1,
@@ -92,26 +95,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   userIcon: {
-    borderRadius: '50%',
+    borderRadius: 50,
     borderColor: '#fff',
     borderWidth: 3,
     // marginRight:'4%'
-    
+
   },
   picture2: {
     height: 200,
     width: 260,
-    marginBottom: 30,
+    margin: '8%',
 
   },
   upperContainer: {
     alignItems: 'center',
-    opacity:0.5
+    opacity: 0.8,
   },
   userName: {
     fontWeight: 'bold',
     fontSize: 20,
-    margin:10
+    margin: 10,
+    marginTop: '8%',
   },
 
   courses: {
@@ -133,6 +137,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     fontSize: 18,
     color: 'white',
+  },
+
+  droidSafeArea: {
+    flex: 1,
+    paddingTop: Platform.OS === 'android' ? 25 : 0,
+    backgroundColor: '#9b4afe',
   },
 
 });
