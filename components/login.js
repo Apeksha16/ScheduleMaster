@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, ScrollView, SafeAreaView } from 'react-native';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
 
 const Login = ({ navigation }) => {
   return (
