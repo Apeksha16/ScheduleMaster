@@ -13,7 +13,7 @@ const Login = ({ navigation }) => {
             <Text style={styles.header}>Schedule Master</Text>
             <Image style={styles.picture1} source={require('.././assets/photos/login.png')} />
           </View>
-          <TextInput style={styles.phoneNumber} placeholder='Enter Phone Number'></TextInput>
+            <TextInput style={styles.phoneNumber} inputMode='numeric' textAlign='center' caretHidden={true} maxLength={10} placeholder='Enter Phone Number'></TextInput>
           <View style={styles.lowerContainer}>
             <TouchableOpacity style={styles.signUp} >
               <Text style={styles.btnTxt}>Sign Up</Text>
