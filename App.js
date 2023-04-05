@@ -7,7 +7,7 @@ import Login from './components/login';
 import Otp from './components/otp';
 import Home from './components/home';
 import CourseList from './components/courses';
-import BcaStructure from './components/bcaStructure';
+import CourseStructure from './components/courseStructure';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,7 +22,7 @@ const App = () => {
           <Stack.Screen name="Verify OTP" component={Otp} />
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Courses" component={CourseList} />
-          <Stack.Screen name="Course Structure" component={BcaStructure} />
+          <Stack.Screen name="Course Structure" component={CourseStructure} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>
