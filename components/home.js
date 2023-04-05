@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 60,
     width: '100%',
-    backgroundColor: primaryColor
+    backgroundColor: primaryColor,
   },
   bottomView: {
     flex: 0.05,
