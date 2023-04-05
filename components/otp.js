@@ -21,7 +21,7 @@ export default function Otp({ navigation }) {
                                 <View style={styles.phoneContainer}>
                                     <Text style={styles.phoneNumber}>+91 7668804527</Text>
                                     <TouchableOpacity>
-                                        <SvgXml style={styles.pencil} xml={editIcon} height={30} width={30} />
+                                        <SvgXml style={styles.pencil} xml={editIcon} height={40} width={40} />
                                     </TouchableOpacity>
                                 </View>
                                 <Text style={styles.otp}>Enter 4-digit OTP</Text>
@@ -64,16 +64,10 @@ const styles = StyleSheet.create({
         marginTop: '4%',
     },
     pencil: {
-        textAlign: 'center',
         marginLeft: 10,
-        fontWeight: 'bold',
         borderRadius: 6,
         borderColor: 'grey',
-        backgroundColor: 'white',
         borderWidth: 2,
-        fontSize: 24,
-        width: 44,
-        padding: 8,
         backgroundColor: '#fff',
 
     },

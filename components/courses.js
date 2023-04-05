@@ -33,42 +33,44 @@ const CourseList = ({ navigation }) => {
 
                     <View style={styles.upperContainer}>
                         <Text style={styles.heading}>Our Courses</Text>
-                        <TouchableOpacity>
-                            <Text style={styles.addBtn}>Add Course</Text>
+                        <TouchableOpacity style={styles.addBtn}>
+                            <Text style={styles.btnTxt}>Add Course</Text>
                         </TouchableOpacity>
                     </View>
-                    <ScrollView contentContainerStyle={styles.lowerContainer} style={{ height: '100%' }}>
-                        <TouchableOpacity style={styles.courseListContainer} onPress={() => navigation.navigate('Course Structure')} >
-                            <View style={styles.circle}>
-                                <Text style={styles.dynamicName1}>BC</Text>
+                    <View style={styles.lowerContainer}>
+                        <ScrollView contentContainerStyle={styles.scrollContainer} style={{ height: '70%' }}>
+                            <TouchableOpacity style={styles.courseListContainer} onPress={() => navigation.navigate('Course Structure')} >
+                                <View style={styles.circle}>
+                                    <Text style={styles.dynamicName1}>BC</Text>
+                                </View>
+                                <Text style={styles.courseName}>BCA</Text>
+                            </TouchableOpacity>
+
+
+                            <View style={styles.courseListContainer}>
+                                <View style={styles.circle}>
+                                    <Text style={styles.dynamicName1}>MC</Text>
+                                </View>
+                                <Text style={styles.courseName}>MCA</Text>
                             </View>
-                            <Text style={styles.courseName}>BCA</Text>
-                        </TouchableOpacity>
 
 
-                        <View style={styles.courseListContainer}>
-                            <View style={styles.circle}>
-                                <Text style={styles.dynamicName1}>MC</Text>
+                            <View style={styles.courseListContainer}>
+                                <View style={styles.circle}>
+                                    <Text style={styles.dynamicName1}>BE</Text>
+                                </View>
+                                <Text style={styles.courseName}>BTECH</Text>
                             </View>
-                            <Text style={styles.courseName}>MCA</Text>
-                        </View>
 
-
-                        <View style={styles.courseListContainer}>
-                            <View style={styles.circle}>
-                                <Text style={styles.dynamicName1}>BE</Text>
+                            <View style={styles.courseListContainer}>
+                                <View style={styles.circle}>
+                                    <Text style={styles.dynamicName1}>BB</Text>
+                                </View>
+                                <Text style={styles.courseName}>BBA</Text>
                             </View>
-                            <Text style={styles.courseName}>BTECH</Text>
-                        </View>
 
-                        <View style={styles.courseListContainer}>
-                            <View style={styles.circle}>
-                                <Text style={styles.dynamicName1}>BB</Text>
-                            </View>
-                            <Text style={styles.courseName}>BBA</Text>
-                        </View>
-
-                    </ScrollView>
+                        </ScrollView>
+                    </View>
                 </View>
             </SafeAreaView >
             <View style={styles.bottomView} />
@@ -130,14 +132,20 @@ const styles = StyleSheet.create({
         fontSize: 26,
         fontWeight: 'bold',
         padding: '2%',
+
     },
     addBtn: {
+        borderRadius: 6,
+        borderWidth: 2,
+        borderColor: '#9b4afe',
+    },
+    btnTxt: {
         fontSize: 18,
         backgroundColor: '#9b4afe',
-        borderRadius: 6,
         textAlign: 'center',
         padding: '2%',
         color: 'white',
+        fontWeight: 'bold',
     },
     lowerContainer: {
         justifyContent: 'flex-start',
@@ -146,20 +154,12 @@ const styles = StyleSheet.create({
         height: '80%',
         width: '90%',
         marginLeft: '5%',
+        marginTop: '4%',
+        borderRadius: 6,
+        marginBottom: '4%',
     },
 
-    courseListContainer: {
-        flexDirection: 'row',
-        backgroundColor: '#9b4afe',
-        borderColor: '#9b4afe',
-        width: '80%',
-        height: '14%',
-        marginTop: '10%',
-        alignItems: 'center',
-        padding: '2%',
-        borderRadius: 8,
-        paddingLeft: '4%',
-    },
+
     circle: {
         width: 50,
         height: 50,
@@ -171,16 +171,30 @@ const styles = StyleSheet.create({
     },
 
     dynamicName1: {
-        fontSize: 22,
+        fontSize: 24,
         color: 'black',
         fontWeight: 'bold',
+
     },
 
     courseName: {
-        fontSize: 24,
-        width: '70%',
-        color: backArrowColor,
+        margin: '4%',
+        fontSize: 22,
+        color: '#fff',
         fontWeight: 'bold',
-        marginLeft: '4%',
+
+    },
+
+    courseListContainer: {
+        flexDirection: 'row',
+        paddingLeft: '4%',
+        marginTop: '20%',
+        borderWidth: 1,
+        backgroundColor: primaryColor,
+        borderColor: primaryColor,
+        borderRadius: 6,
+        alignItems: 'center',
+        width: 240,
+        height: 74,
     },
 });
