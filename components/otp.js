@@ -21,7 +21,8 @@ export default function Otp({ navigation }) {
                                 <View style={styles.phoneContainer}>
                                     <Text style={styles.phoneNumber}>+91 7668804527</Text>
                                     <TouchableOpacity>
-                                        <SvgXml style={styles.pencil} xml={editIcon} height={40} width={40} />
+                                        <SvgXml style={styles.pencil} xml={editIcon} height={48} width={44} />
+
                                     </TouchableOpacity>
                                 </View>
                                 <Text style={styles.otp}>Enter 4-digit OTP</Text>
