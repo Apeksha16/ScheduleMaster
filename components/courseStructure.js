@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Platform } from 'react-native';
 import { ScrollView, TextInput } from 'react-native-gesture-handler';
 import { SvgXml } from "react-native-svg";
+
 const primaryColor = '#9b4afe';
 const backArrowColor = "#fff";
 
