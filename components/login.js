@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, ScrollView, SafeAreaView } from 'react-native';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
 
 const Login = ({ navigation }) => {
   return (
@@ -13,7 +11,7 @@ const Login = ({ navigation }) => {
             <Text style={styles.header}>Schedule Master</Text>
             <Image style={styles.picture1} source={require('.././assets/photos/login.png')} />
           </View>
-          <TextInput style={styles.phoneNumber} placeholder='Enter Phone Number'></TextInput>
+            <TextInput style={styles.phoneNumber} inputMode='numeric' textAlign='center' caretHidden={true} maxLength={10} placeholder='Enter Phone Number'></TextInput>
           <View style={styles.lowerContainer}>
             <TouchableOpacity style={styles.signUp} >
               <Text style={styles.btnTxt}>Sign Up</Text>
